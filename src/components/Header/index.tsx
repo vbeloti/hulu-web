@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="header__icons">
-        <div className="header__icon">
+        <div className="header__icon header__icon--active">
           <HomeIcon />
           <p>Home</p>
         </div>
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
           <SearchIcon />
           <p>Buscar</p>
         </div>
-        
+
         <div className="header__icon">
           <PersonOutlineIcon />
           <p>Conta</p>
