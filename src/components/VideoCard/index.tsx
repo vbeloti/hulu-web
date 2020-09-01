@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import TextTruncate from "react-text-truncate";
 import { ThumbUpSharp } from "@material-ui/icons";
 
@@ -11,9 +11,9 @@ interface IVideoCardProps {
 
 const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
-const VideoCard: React.FC<IVideoCardProps> = ({ movie }) => {
+const VideoCard = forwardRef<HTMLDivElement, IVideoCardProps>(({ movie }, ref) => {
   return (
-    <div className="videoCard">
+    <div ref={ref} className="videoCard">
       <img
         src={`${BASE_URL}${movie.backdrop_path || movie.poster_path}`}
         alt={movie.title}
@@ -34,6 +34,6 @@ const VideoCard: React.FC<IVideoCardProps> = ({ movie }) => {
       </p>
     </div>
   );
-};
+});
 
 export default VideoCard;

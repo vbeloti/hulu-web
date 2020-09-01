@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import VideoCard from "../VideoCard";
 import api from "../../services/api";
-import requests from "../../services/requests";
+import FlipMovie from 'react-flip-move';
 
 export interface IMovie {
   id: number;
