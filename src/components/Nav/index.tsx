@@ -1,21 +1,26 @@
 import React from 'react';
 
 import './styles.css';
+import requests from '../../services/requests';
 
-const Nav: React.FC = () => {
+interface INavProps {
+  setSelectedOption: (option: string) => void;
+}
+
+const Nav: React.FC<INavProps> = ({setSelectedOption}) => {
   return (
       <div className="nav">
-          <h2>Tendências</h2>
-          <h2>Mais Votados</h2>
-          <h2>Ação</h2>
-          <h2>Comédia</h2>
-          <h2>Teror</h2>
-          <h2>Romance</h2>
-          <h2>Mistério</h2>
-          <h2>Sci-fi</h2>
-          <h2>Ocidental</h2>
-          <h2>Animação</h2>
-          <h2>Filme</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchTrending)}>Tendências</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchTopRated)}>Mais Votados</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchActionMovies)}>Ação</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchComedyMovies)}>Comédia</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchHorrorMovies)}>Teror</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchRomanceMovies)}>Romance</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchMistery)}>Mistério</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchSciFi)}>Sci-fi</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchWestern)}>Ocidental</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchAnimation)}>Animação</h2>
+          <h2 onClick={() => setSelectedOption(requests.fetchTV)}>Filme</h2>
       </div>
   );
 }
