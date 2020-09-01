@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import VideoCard from "../VideoCard";
 import api from "../../services/api";
-import FlipMovie from 'react-flip-move';
+import FlipMove from "react-flip-move";
 
 export interface IMovie {
   id: number;
@@ -36,9 +36,11 @@ const Results: React.FC<IResultsProps> = ({ selectedOptions }) => {
 
   return (
     <div className="results">
-      {movies.map((movie) => (
-        <VideoCard key={movie.id} movie={movie} />
-      ))}
+      <FlipMove>
+        {movies.map((movie) => (
+          <VideoCard key={movie.id} movie={movie} />
+        ))}
+      </FlipMove>
     </div>
   );
 };
